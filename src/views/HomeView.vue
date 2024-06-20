@@ -66,5 +66,4 @@
 </template>
 
 <style>
-/* Ajoutez ici votre style personnalisé si nécessaire */
 </style>
