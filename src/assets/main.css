@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  .digit-lock{
+    @apply h-16 w-16 relative 
+    backdrop-blur-lg bg-transparent rounded-full flex items-center 
+    justify-center text-xl font-bold text-white
+  }
+  .digit-input{
+    @apply h-4 w-4 rounded-full bg-transparent border
+  }
+}
