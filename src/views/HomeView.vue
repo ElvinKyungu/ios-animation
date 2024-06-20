@@ -1,31 +1,55 @@
 <script setup lang="ts">
-  import { ref, onMounted, onUnmounted } from 'vue';
-  import ScreenPassword from '@/components/ScreenPassword.vue';
-  import IconBattery from '@/components/icons/IconBattery.vue';
-  import IconWifi from '@/components/icons/IconWifi.vue';
-  import IconNetwork from '@/components/icons/iconNetwork.vue';
-  import ScreenLock from '@/components/SreenLock.vue';
-  import ScreenHome from '@/components/ScreenHome.vue';
-  import BorderPhone from '@/components/BorderPhone.vue';
+  import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+  import gsap from 'gsap'
+  import ScreenPassword from '@/components/ScreenPassword.vue'
+  import IconBattery from '@/components/icons/IconBattery.vue'
+  import IconWifi from '@/components/icons/IconWifi.vue'
+  import IconNetwork from '@/components/icons/iconNetwork.vue'
+  import ScreenLock from '@/components/SreenLock.vue'
+  import ScreenHome from '@/components/ScreenHome.vue'
+  import BorderPhone from '@/components/BorderPhone.vue'
 
   const currentScreen = ref('lock')
-
-  const handleCorrectPasscode = () => {
-    console.log('Passcode correct event received')
-    currentScreen.value = 'home'
+  const animateIn = (element: HTMLElement) => {
+    gsap.fromTo(element, 
+      { 
+        opacity: 0
+      },
+      { 
+        opacity: 1, 
+        duration: .5 
+      }
+    )
   }
-
-  onMounted(() => {
-    window.addEventListener('correct-passcode', handleCorrectPasscode as EventListener)
-  })
-
-  onUnmounted(() => {
-    window.removeEventListener('correct-passcode', handleCorrectPasscode as EventListener)
-  })
+  const handleCorrectPasscode = () => {
+    currentScreen.value = 'home';
+    nextTick(() => {
+      const homeElement = document.querySelector('.screen-home')
+      if (homeElement) {
+        animateIn(homeElement as HTMLElement)
+      }
+    })
+  }
 
   const toggleScreen = () => {
     currentScreen.value = 'password'
+    nextTick(() => {
+      const passwordElement = document.querySelector('.screen-password')
+      if (passwordElement) {
+        animateIn(passwordElement as HTMLElement)
+      }
+    })
   }
+  onMounted(() => {
+    window.addEventListener('correct-passcode', handleCorrectPasscode as EventListener)
+    const lockElement = document.querySelector('.screen-lock')
+    if (lockElement) {
+      animateIn(lockElement as HTMLElement)
+    }
+  })
+  onUnmounted(() => {
+    window.removeEventListener('correct-passcode', handleCorrectPasscode as EventListener)
+  })
 </script>
 
 <template>
@@ -54,9 +78,9 @@
               <IconBattery />
             </div>
             <div class="h-0.5 w-10 bg-white rounded ml-auto mr-7 mt-1"></div>
-            <ScreenLock v-if="currentScreen === 'lock'" />
-            <ScreenPassword v-else-if="currentScreen === 'password'" />
-            <ScreenHome v-else-if="currentScreen === 'home'" />
+            <ScreenLock v-if="currentScreen === 'lock'" class="screen-lock" />
+            <ScreenPassword v-else-if="currentScreen === 'password'" class="screen-password" />
+            <ScreenHome v-else-if="currentScreen === 'home'" class="screen-home" />
           </div>
         </div>
       </div>
