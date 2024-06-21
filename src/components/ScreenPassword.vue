@@ -42,7 +42,6 @@
   };
 
   const emitCorrectPasscode = () => {
-    // Émettre l'événement vers le parent
     const event = new CustomEvent('correct-passcode', { 
       detail: passcode.value.join('') 
     })
@@ -78,19 +77,46 @@
     </div>
     <div class="grid grid-cols-1 justify-center mt-10 gap-4">
       <ul class="flex gap-8 items-center">
-        <li class="digit-lock" @click="handleDigitClick('1')">1</li>
-        <li class="digit-lock" @click="handleDigitClick('2')">2</li>
-        <li class="digit-lock" @click="handleDigitClick('3')">3</li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('1')">
+          <span>1</span>
+          <span class="text-xs uppercase pt-3"></span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('2')">
+          <span>2</span>
+          <span class="text-xs uppercase tracking-tighter">a b c</span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('3')">
+          <span>3</span>
+          <span class="text-xs uppercase tracking-tighter">d e f</span>
+        </li>
       </ul>
       <ul class="flex gap-8 items-center">
-        <li class="digit-lock" @click="handleDigitClick('4')">4</li>
-        <li class="digit-lock" @click="handleDigitClick('5')">5</li>
-        <li class="digit-lock" @click="handleDigitClick('6')">6</li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('4')">
+          <span>4</span>
+          <span class="text-xs uppercase tracking-tighter">g h i</span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('5')">
+          <span>5</span>
+          <span class="text-xs uppercase tracking-tighter">j k l</span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('6')">
+          <span>6</span>
+          <span class="text-xs uppercase tracking-tighter">m n o</span>
+        </li>
       </ul>
-      <ul class="flex gap-8 items-center">
-        <li class="digit-lock" @click="handleDigitClick('7')">7</li>
-        <li class="digit-lock" @click="handleDigitClick('8')">8</li>
-        <li class="digit-lock" @click="handleDigitClick('9')">9</li>
+      <ul class="flex gap-8 items-center justify-start">
+        <li class="digit-lock flex-col" @click="handleDigitClick('7')">
+          <span class="text-lg">7</span>
+          <span class="text-xs uppercase tracking-tighter">p q r</span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('8')">
+          <span>8</span>
+          <span class="text-xs uppercase tracking-tighter">s t v</span>
+        </li>
+        <li class="digit-lock flex-col" @click="handleDigitClick('9')">
+          <span>9</span>
+          <span class="text-xs uppercase tracking-tighter">w x y z</span>
+        </li>
       </ul>
       <ul class="flex gap-8 items-center justify-center">
         <li class="digit-lock" @click="handleDigitClick('0')">0</li>
@@ -115,5 +141,8 @@
   50% { transform: translateX(5px); }
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
+}
+.digit-lock:active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 </style>
