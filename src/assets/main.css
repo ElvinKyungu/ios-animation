@@ -1,3 +1,4 @@
+@import url(./base.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,5 +11,8 @@
   }
   .digit-input{
     @apply h-4 w-4 rounded-full bg-transparent border
+  }
+  .app-home{
+    @apply w-10 h-10 rounded-lg
   }
 }

@@ -58,9 +58,9 @@
 </script>
 
 <template>
-  <div class="bg-black/50 backdrop-blur-md z-40 -mt-7 w-full flex justify-center flex-col items-center h-full">
-    <div class="mt-2 mr-5 flex w-full h-full justify-end space-x-2">
-      <iconNetwork />
+  <div class="bg-black/50 backdrop-blur-md z-40 -mt-10 w-full flex justify-center flex-col items-center h-full">
+    <div class="right-4 top-4 absolute flex justify-end space-x-3 z-50">
+      <iconNetwork/>
       <IconWifi />
       <IconBattery />
     </div>
@@ -142,7 +142,11 @@
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
+.digit-lock {
+  cursor: pointer !important;
+}
 .digit-lock:active {
   background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer !important;
 }
 </style>
