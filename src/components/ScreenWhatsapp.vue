@@ -51,13 +51,8 @@ onMounted(() => {
       </p>
     </div>
 
-    <main v-if="showMainContent" class="overflow-y-auto -mt-16 z-20">
+    <main v-if="showMainContent" class="overflow-y-auto  -mt-16 z-20">
       <section class="flex flex-col justify-center antialiased bg-gray-50 text-gray-600 p-4">
-        <div class="mr-5 flex justify-end space-x-3 z-50">
-          <IconNetwork class="text-black"/>
-          <IconWifi class="text-black"/>
-          <IconBattery class="text-black"/>
-        </div>
         <div class="pt-4">
           <div class="relative bg-white rounded-lg">
             <div class="flex justify-between">

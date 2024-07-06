@@ -100,17 +100,15 @@
               <IconWifi />
               <IconBattery />
             </div>
-            <!-- <ScreenLock 
+            <ScreenLock 
               v-if="currentScreen === 'lock'" 
               class="screen-lock cursor-pointer"
             />
             <ScreenPassword 
               v-else-if="currentScreen === 'password'" 
               class="screen-password"
-            /> -->
-            <ScreenHome  class="screen-home mt-5" /> 
-            
-            <!-- <ScreenWhatsapp /> -->
+            />
+            <ScreenHome v-else-if="currentScreen === 'home'"  class="screen-home mt-5" /> 
           </div>
         </div>
       </div>
