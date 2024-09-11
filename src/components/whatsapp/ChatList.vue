@@ -23,7 +23,7 @@ const selectConversation = (conversation: object) => {
     >
       <div class="flex items-center w-full">
         <img 
-          class="rounded-full items-start flex-shrink-0 mr-3" 
+          class="rounded-full items-start flex-shrink-0 mr-3 w-12 h-12" 
           :src="conversation.image" 
           width="40" 
           height="40" 

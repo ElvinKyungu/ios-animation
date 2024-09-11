@@ -3,8 +3,8 @@ import elonAvatar from '@/assets/elon.jpg'
 import gabrielAvatar from '@/assets/gabriel.jpeg'
 import debyamAvatar from '@/assets/debyam.jpeg'
 import antFuAvatar from '@/assets/antfu.jpg'
-import luriAvatar from '@/assets/antfu.jpg'
-import katyaAvatar from '@/assets/antfu.jpg'
+import luriAvatar from '@/assets/avatar.png'
+import katyaAvatar from '@/assets/katya.jpg'
 import type{ Conversation } from '@/type/whatsapp'
 
 export const conversationsData: Conversation[] = [
@@ -18,6 +18,19 @@ export const conversationsData: Conversation[] = [
         { content: "Je suis concentré, ne t’inquiète pas !", sender: "recepteur", hour: "12:15 PM" },
         { content: "Tu as réussi à corriger le bug ?", sender: "emetteur", hour: "12:17 PM" },
         { content: "Oui, tout est sous contrôle.", sender: "recepteur", hour: "12:20 PM" }
+      ]
+    },
+    {
+      id: 2,
+      image: katyaAvatar,
+      name: "Katya",
+      lastMessage: "Do we agree on the final design before the review?",
+      messages: [
+        { "content": "Katya, tu as pu avancer sur la nouvelle UI ?", "sender": "emetteur", "hour": "11:00 AM" },
+        { "content": "Oui, je l'ai intégrée hier soir. Il reste juste à vérifier le responsive.", "sender": "recepteur", "hour": "11:10 AM" },
+        { "content": "Top ! On se met d'accord sur le design final avant la review ?", "sender": "emetteur", "hour": "11:15 AM" },
+        { "content": "Bonne idée, on pourra faire un dernier check ensemble cet après-midi.", "sender": "recepteur", "hour": "11:20 AM" },
+        { "content": "Super, je vais préparer les points à revoir.", "sender": "emetteur", "hour": "11:25 AM" }
       ]
     },
     {
@@ -45,16 +58,15 @@ export const conversationsData: Conversation[] = [
       ]
     },
     {
-      id: 2,
-      image: katyaAvatar,
-      name: "Katya",
-      lastMessage: "On se met d'accord sur le design final avant la review ?",
+      id: 4,
+      image: jessicaAvatar,
+      name: "Jess",
+      lastMessage: "As-tu besoin d'aide avec la documentation ?",
       messages: [
-        { "content": "Katya, tu as pu avancer sur la nouvelle UI ?", "sender": "emetteur", "hour": "11:00 AM" },
-        { "content": "Oui, je l'ai intégrée hier soir. Il reste juste à vérifier le responsive.", "sender": "recepteur", "hour": "11:10 AM" },
-        { "content": "Top ! On se met d'accord sur le design final avant la review ?", "sender": "emetteur", "hour": "11:15 AM" },
-        { "content": "Bonne idée, on pourra faire un dernier check ensemble cet après-midi.", "sender": "recepteur", "hour": "11:20 AM" },
-        { "content": "Super, je vais préparer les points à revoir.", "sender": "emetteur", "hour": "11:25 AM" }
+        { content: "Salut Elvin, comment ça se passe de ton côté ?", sender: "emetteur", hour: "2:00 PM" },
+        { content: "Très bien, je suis en plein dans le développement.", sender: "recepteur", hour: "2:05 PM" },
+        { content: "As-tu besoin d'aide avec la documentation ?", sender: "emetteur", hour: "2:10 PM" },
+        { content: "Peut-être pour quelques sections, je te fais signe.", sender: "recepteur", hour: "2:15 PM" }
       ]
     },
     {
@@ -71,28 +83,4 @@ export const conversationsData: Conversation[] = [
         { "content": "Oui, j'ai inclus les derniers ajustements côté frontend.", "sender": "recepteur", "hour": "9:25 AM" }
       ]
     },
-    {
-      id: 4,
-      image: jessicaAvatar,
-      name: "Jessica Sachs",
-      lastMessage: "As-tu besoin d'aide avec la documentation ?",
-      messages: [
-        { content: "Salut Elvin, comment ça se passe de ton côté ?", sender: "emetteur", hour: "2:00 PM" },
-        { content: "Très bien, je suis en plein dans le développement.", sender: "recepteur", hour: "2:05 PM" },
-        { content: "As-tu besoin d'aide avec la documentation ?", sender: "emetteur", hour: "2:10 PM" },
-        { content: "Peut-être pour quelques sections, je te fais signe.", sender: "recepteur", hour: "2:15 PM" }
-      ]
-    },
-    {
-      id: 5,
-      image: debyamAvatar,
-      name: "Integrity",
-      lastMessage: "Nous devons revoir les tests unitaires.",
-      messages: [
-        { content: "Salut, on est bon pour le déploiement ?", sender: "emetteur", hour: "9:00 AM" },
-        { content: "Presque, je fais les derniers tests.", sender: "recepteur", hour: "9:10 AM" },
-        { content: "Nous devons revoir les tests unitaires.", sender: "emetteur", hour: "9:15 AM" },
-        { content: "Je m'en occupe, pas de souci.", sender: "recepteur", hour: "9:20 AM" }
-      ]
-    }
   ]
