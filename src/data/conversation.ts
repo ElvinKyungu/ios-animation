@@ -1,7 +1,16 @@
-export const conversationsData = [
+import jessicaAvatar from '@/assets/jess.jpeg'
+import elonAvatar from '@/assets/elon.jpg'
+import gabrielAvatar from '@/assets/gabriel.jpeg'
+import debyamAvatar from '@/assets/debyam.jpeg'
+import antFuAvatar from '@/assets/antfu.jpg'
+import luriAvatar from '@/assets/antfu.jpg'
+import katyaAvatar from '@/assets/antfu.jpg'
+import type{ Conversation } from '@/type/whatsapp'
+
+export const conversationsData: Conversation[] = [
     {
       id: 1,
-      image: "gabrielAvatar",
+      image: gabrielAvatar,
       name: "Gabriel",
       lastMessage: "Tu as réussi à corriger le bug ?",
       messages: [
@@ -13,7 +22,7 @@ export const conversationsData = [
     },
     {
       id: 2,
-      image: "elonAvatar",
+      image: elonAvatar,
       name: "Elon Musk",
       lastMessage: "Prêt pour le lancement de la nouvelle fonctionnalité ?",
       messages: [
@@ -25,7 +34,7 @@ export const conversationsData = [
     },
     {
       id: 3,
-      image: "antFuAvatar",
+      image: antFuAvatar,
       name: "Anthony Fu",
       lastMessage: "N'oublie pas de faire une PR pour le refactoring.",
       messages: [
@@ -36,8 +45,35 @@ export const conversationsData = [
       ]
     },
     {
-      "id": 4,
-      image: "jessicaAvatar",
+      id: 2,
+      image: katyaAvatar,
+      name: "Katya",
+      lastMessage: "On se met d'accord sur le design final avant la review ?",
+      messages: [
+        { "content": "Katya, tu as pu avancer sur la nouvelle UI ?", "sender": "emetteur", "hour": "11:00 AM" },
+        { "content": "Oui, je l'ai intégrée hier soir. Il reste juste à vérifier le responsive.", "sender": "recepteur", "hour": "11:10 AM" },
+        { "content": "Top ! On se met d'accord sur le design final avant la review ?", "sender": "emetteur", "hour": "11:15 AM" },
+        { "content": "Bonne idée, on pourra faire un dernier check ensemble cet après-midi.", "sender": "recepteur", "hour": "11:20 AM" },
+        { "content": "Super, je vais préparer les points à revoir.", "sender": "emetteur", "hour": "11:25 AM" }
+      ]
+    },
+    {
+      id: 1,
+      image: luriAvatar,
+      name: "Luri",
+      lastMessage: "Est-ce que le rapport est prêt pour la réunion de cet après-midi ?",
+      messages: [
+        { "content": "Gabriel, tu as pu avancer sur le rapport de la réunion ?", "sender": "emetteur", "hour": "9:00 AM" },
+        { "content": "Oui, je viens de le finaliser. Il est prêt.", "sender": "recepteur", "hour": "9:05 AM" },
+        { "content": "Parfait, je vais le passer en revue avant la réunion.", "sender": "emetteur", "hour": "9:10 AM" },
+        { "content": "D'accord, tiens-moi au courant si tu as des remarques.", "sender": "recepteur", "hour": "9:15 AM" },
+        { "content": "Est-ce que tout est à jour dans la partie technique ?", "sender": "emetteur", "hour": "9:20 AM" },
+        { "content": "Oui, j'ai inclus les derniers ajustements côté frontend.", "sender": "recepteur", "hour": "9:25 AM" }
+      ]
+    },
+    {
+      id: 4,
+      image: jessicaAvatar,
       name: "Jessica Sachs",
       lastMessage: "As-tu besoin d'aide avec la documentation ?",
       messages: [
@@ -48,8 +84,8 @@ export const conversationsData = [
       ]
     },
     {
-      "id": 5,
-      image: "debyamAvatar",
+      id: 5,
+      image: debyamAvatar,
       name: "Integrity",
       lastMessage: "Nous devons revoir les tests unitaires.",
       messages: [

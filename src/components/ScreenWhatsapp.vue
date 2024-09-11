@@ -4,18 +4,13 @@ import gsap from 'gsap'
 import type { Conversation } from '@/type/whatsapp'
 import ChatList from './whatsapp/ChatList.vue'
 import ChatWindow from './whatsapp/ChatWindow.vue'
-import jessicaAvatar from '@/assets/jess.jpeg'
-import elonAvatar from '@/assets/elon.jpg'
-import gabrielAvatar from '@/assets/gabriel.jpeg'
-import debyamAvatar from '@/assets/debyam.jpeg'
-import antFuAvatar from '@/assets/antfu.jpg'
 import WhatsappLoader from './whatsapp/WhatsappLoader.vue'
 import WhatsappHeader from './whatsapp/WhatsappHeader.vue'
 import {conversationsData} from '@/data/conversation'
 const showMainContent = ref(false)
 const selectedConversation = ref<Conversation | null>(null)
 
-const conversations = ref<Conversation[]>();
+const conversations = ref<Conversation[]>()
 
 onMounted(() => {
   gsap.to('.welcome-message', {
@@ -26,10 +21,13 @@ onMounted(() => {
       gsap.fromTo('main', { opacity: 0 }, { duration: 1, opacity: 1 })
     }
   })
+  conversations.value = conversationsData
 })
 
 const navigateToConversation = (id: number) => {
-  selectedConversation.value = conversations?.value.find(convo => convo.id === id) || null
+  if (conversations.value) {
+    selectedConversation.value = conversations?.value.find(convo => convo.id === id) || null
+  }
 }
 </script>
 
@@ -43,7 +41,7 @@ const navigateToConversation = (id: number) => {
             <WhatsappHeader />
             <div class="pt-3 pb-20">
               <div class="divide-y divide-gray-200">
-                <ChatList :conversations="conversations" @conversationSelected="navigateToConversation" />
+                <ChatList v-if="conversations" :conversations="conversations" @conversationSelected="navigateToConversation" />
               </div>
             </div>
             <button class="absolute bottom-10 right-5 inline-flex items-center text-xs font-medium text-white bg-indigo-500 hover:bg-indigo-600 rounded-full text-center px-3 py-2 shadow-lg focus:outline-none focus-visible:ring-2">
