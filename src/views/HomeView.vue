@@ -53,9 +53,6 @@
 </script>
 
 <template>
-
-
-
 <div class="scene">
   <div class="phone-con">
     <div class="phone">

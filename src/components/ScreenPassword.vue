@@ -59,14 +59,14 @@
 
 <template>
   <div class="bg-black/50 backdrop-blur-md z-40 -mt-10 w-full flex justify-center flex-col items-center h-full">
-    <div class="right-4 top-4 absolute flex justify-end space-x-3 z-50">
+    <div class="right-4 top-4 absolute flex justify-end space-x-2 md:space-x-3 z-50">
       <iconNetwork/>
       <IconWifi />
       <IconBattery />
     </div>
-    <div class="flex justify-center flex-col items-center mt-20">
-      <h3 class="text-xl text-white">Touch ID or Enter PassCode</h3>
-      <ul class="flex gap-4 mt-4">
+    <div class="flex justify-center flex-col items-center mt-28 md:mt-20">
+      <h3 class="text-xs md:text-xl text-white mb-3">Touch ID or Enter PassCode</h3>
+      <ul class="flex gap-2 md:gap-4 md:mt-4">
         <li
           v-for="n in 6"
           :key="n"
@@ -75,54 +75,54 @@
         ></li>
       </ul>
     </div>
-    <div class="grid grid-cols-1 justify-center mt-10 gap-4">
-      <ul class="flex gap-8 items-center">
+    <div class="grid grid-cols-1 justify-center mt-3 md:mt-10 gap-2 md:gap-4">
+      <ul class="flex gap-2 md:gap-8 items-center justify-center">
         <li class="digit-lock flex-col" @click="handleDigitClick('1')">
           <span>1</span>
-          <span class="text-xs uppercase pt-3"></span>
+          <span class="text-[10px] md:text-xs uppercase pt-3"></span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('2')">
           <span>2</span>
-          <span class="text-xs uppercase tracking-tighter">a b c</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">a b c</span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('3')">
           <span>3</span>
-          <span class="text-xs uppercase tracking-tighter">d e f</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">d e f</span>
         </li>
       </ul>
-      <ul class="flex gap-8 items-center">
+      <ul class="flex gap-2 md:gap-8 items-center justify-center">
         <li class="digit-lock flex-col" @click="handleDigitClick('4')">
           <span>4</span>
-          <span class="text-xs uppercase tracking-tighter">g h i</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">g h i</span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('5')">
           <span>5</span>
-          <span class="text-xs uppercase tracking-tighter">j k l</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">j k l</span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('6')">
           <span>6</span>
-          <span class="text-xs uppercase tracking-tighter">m n o</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">m n o</span>
         </li>
       </ul>
-      <ul class="flex gap-8 items-center justify-start">
+      <ul class="flex gap-2 md:gap-8 items-center justify-center">
         <li class="digit-lock flex-col" @click="handleDigitClick('7')">
-          <span class="text-lg">7</span>
-          <span class="text-xs uppercase tracking-tighter">p q r</span>
+          <span>7</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">p q r</span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('8')">
           <span>8</span>
-          <span class="text-xs uppercase tracking-tighter">s t v</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">s t v</span>
         </li>
         <li class="digit-lock flex-col" @click="handleDigitClick('9')">
           <span>9</span>
-          <span class="text-xs uppercase tracking-tighter">w x y z</span>
+          <span class="text-[10px] md:text-xs uppercase tracking-tighter">w x y z</span>
         </li>
       </ul>
       <ul class="flex gap-8 items-center justify-center">
         <li class="digit-lock" @click="handleDigitClick('0')">0</li>
       </ul>
     </div>
-    <div class="flex justify-between w-full mt-6 text-white pb-16 px-5 text-xl">
+    <div class="flex justify-between w-full lg:mt-6 text-white pb-16 md:pb-5 px-5 text-xs md:text-xl">
       <span>Emergency</span>
       <span @click="passcode = []">Cancel</span>
     </div>
